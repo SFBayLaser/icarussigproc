@@ -24,6 +24,7 @@
 #include <functional>
 #include "Morph1D.h"
 #include "Morph2D.h"
+#include "ICARUSSigProcDefs.h"
 
 namespace icarussigproc {
 
@@ -38,17 +39,6 @@ namespace icarussigproc {
       
       /// Default constructor
       Denoising(){}
-
-      /// Define some more convenient names for containers we are going to be using
-      using VectorShort  = std::vector<short>;
-      using VectorFloat  = std::vector<float>;
-      using VectorDouble = std::vector<double>;
-      using VectorBool   = std::vector<bool>;
-      using ArrayShort   = std::vector<VectorShort>;
-      using ArrayFloat   = std::vector<VectorFloat>;
-      using ArrayDouble  = std::vector<VectorDouble>;
-      using ArrayBool    = std::vector<VectorBool>;
-
 
       void getSelectVals(
         const ArrayShort&,
