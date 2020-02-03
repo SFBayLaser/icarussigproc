@@ -5,7 +5,7 @@
 
 #endif
 
-void icarussigproc::AdaptiveWiener::filterLee(
+void sigproc_tools::AdaptiveWiener::filterLee(
   std::vector<std::vector<short>>& deconvolvedWaveform,
   const std::vector<std::vector<short>>& waveLessCoherent,
   const float noiseVar,
@@ -16,7 +16,7 @@ void icarussigproc::AdaptiveWiener::filterLee(
     deconvolvedWaveform, waveLessCoherent, sx, sy, noiseVar);
 }
 
-void icarussigproc::AdaptiveWiener::filterLee(
+void sigproc_tools::AdaptiveWiener::filterLee(
   std::vector<std::vector<float>>& deconvolvedWaveform,
   const std::vector<std::vector<float>>& waveLessCoherent,
   const float noiseVar,
@@ -27,7 +27,7 @@ void icarussigproc::AdaptiveWiener::filterLee(
     deconvolvedWaveform, waveLessCoherent, sx, sy, noiseVar);
 }
 
-void icarussigproc::AdaptiveWiener::filterLee(
+void sigproc_tools::AdaptiveWiener::filterLee(
   std::vector<std::vector<double>>& deconvolvedWaveform,
   const std::vector<std::vector<double>>& waveLessCoherent,
   const float noiseVar,
@@ -39,7 +39,7 @@ void icarussigproc::AdaptiveWiener::filterLee(
 }
 
 template <typename T>
-void icarussigproc::AdaptiveWiener::filterLee(
+void sigproc_tools::AdaptiveWiener::filterLee(
   std::vector<std::vector<T>>& deconvolvedWaveform,
   const std::vector<std::vector<T>>& waveLessCoherent,
   const float noiseVar,
@@ -92,7 +92,7 @@ void icarussigproc::AdaptiveWiener::filterLee(
 }
 
 
-void icarussigproc::AdaptiveWiener::MMWF(
+void sigproc_tools::AdaptiveWiener::MMWF(
   std::vector<std::vector<short>>& deconvolvedWaveform,
   const std::vector<std::vector<short>>& waveLessCoherent,
   const float noiseVar,
@@ -103,7 +103,7 @@ void icarussigproc::AdaptiveWiener::MMWF(
     deconvolvedWaveform, waveLessCoherent, noiseVar, sx, sy);
 }
 
-void icarussigproc::AdaptiveWiener::MMWF(
+void sigproc_tools::AdaptiveWiener::MMWF(
   std::vector<std::vector<float>>& deconvolvedWaveform,
   const std::vector<std::vector<float>>& waveLessCoherent,
   const float noiseVar,
@@ -114,7 +114,7 @@ void icarussigproc::AdaptiveWiener::MMWF(
     deconvolvedWaveform, waveLessCoherent, noiseVar, sx, sy);
 }
 
-void icarussigproc::AdaptiveWiener::MMWF(
+void sigproc_tools::AdaptiveWiener::MMWF(
   std::vector<std::vector<double>>& deconvolvedWaveform,
   const std::vector<std::vector<double>>& waveLessCoherent,
   const float noiseVar,
@@ -126,7 +126,7 @@ void icarussigproc::AdaptiveWiener::MMWF(
 }
 
 template <typename T>
-void icarussigproc::AdaptiveWiener::MMWF(
+void sigproc_tools::AdaptiveWiener::MMWF(
   std::vector<std::vector<T>>& deconvolvedWaveform,
   const std::vector<std::vector<T>>& waveLessCoherent,
   const float noiseVar,
@@ -143,7 +143,7 @@ void icarussigproc::AdaptiveWiener::MMWF(
     deconvolvedWaveform[i].resize(nTicks);
   }
 
-  icarussigproc::MiscUtils utils;
+  sigproc_tools::MiscUtils utils;
 
   for (size_t i=0; i<numChannels; ++i) {
     for (size_t j=0; j<nTicks; ++j) {
@@ -182,7 +182,7 @@ void icarussigproc::AdaptiveWiener::MMWF(
 }
 
 
-void icarussigproc::AdaptiveWiener::MMWFStar(
+void sigproc_tools::AdaptiveWiener::MMWFStar(
   std::vector<std::vector<short>>& deconvolvedWaveform,
   const std::vector<std::vector<short>>& waveLessCoherent,
   const unsigned int sx,
@@ -192,7 +192,7 @@ void icarussigproc::AdaptiveWiener::MMWFStar(
     deconvolvedWaveform, waveLessCoherent, sx, sy);
 }
 
-void icarussigproc::AdaptiveWiener::MMWFStar(
+void sigproc_tools::AdaptiveWiener::MMWFStar(
   std::vector<std::vector<float>>& deconvolvedWaveform,
   const std::vector<std::vector<float>>& waveLessCoherent,
   const unsigned int sx,
@@ -202,7 +202,7 @@ void icarussigproc::AdaptiveWiener::MMWFStar(
     deconvolvedWaveform, waveLessCoherent, sx, sy);
 }
 
-void icarussigproc::AdaptiveWiener::MMWFStar(
+void sigproc_tools::AdaptiveWiener::MMWFStar(
   std::vector<std::vector<double>>& deconvolvedWaveform,
   const std::vector<std::vector<double>>& waveLessCoherent,
   const unsigned int sx,
@@ -213,7 +213,7 @@ void icarussigproc::AdaptiveWiener::MMWFStar(
 }
 
 template <typename T>
-void icarussigproc::AdaptiveWiener::MMWFStar(
+void sigproc_tools::AdaptiveWiener::MMWFStar(
   std::vector<std::vector<T>>& deconvolvedWaveform,
   const std::vector<std::vector<T>>& waveLessCoherent,
   const unsigned int sx,
@@ -229,7 +229,7 @@ void icarussigproc::AdaptiveWiener::MMWFStar(
     deconvolvedWaveform[i].resize(nTicks);
   }
 
-  icarussigproc::MiscUtils utils;
+  sigproc_tools::MiscUtils utils;
 
   std::vector<std::vector<T>> localMedians;
   std::vector<std::vector<T>> localVars;
@@ -296,7 +296,7 @@ void icarussigproc::AdaptiveWiener::MMWFStar(
 }
 
 
-void icarussigproc::AdaptiveWiener::filterLeeEnhanced(
+void sigproc_tools::AdaptiveWiener::filterLeeEnhanced(
   std::vector<std::vector<short>>& deconvolvedWaveform,
   const std::vector<std::vector<short>>& waveLessCoherent,
   const float noiseVar,
@@ -309,7 +309,7 @@ void icarussigproc::AdaptiveWiener::filterLeeEnhanced(
     deconvolvedWaveform, waveLessCoherent, sx, sy, noiseVar, a, epsilon);
 }
 
-void icarussigproc::AdaptiveWiener::filterLeeEnhanced(
+void sigproc_tools::AdaptiveWiener::filterLeeEnhanced(
   std::vector<std::vector<float>>& deconvolvedWaveform,
   const std::vector<std::vector<float>>& waveLessCoherent,
   const float noiseVar,
@@ -322,7 +322,7 @@ void icarussigproc::AdaptiveWiener::filterLeeEnhanced(
     deconvolvedWaveform, waveLessCoherent, sx, sy, noiseVar, a, epsilon);
 }
 
-void icarussigproc::AdaptiveWiener::filterLeeEnhanced(
+void sigproc_tools::AdaptiveWiener::filterLeeEnhanced(
   std::vector<std::vector<double>>& deconvolvedWaveform,
   const std::vector<std::vector<double>>& waveLessCoherent,
   const float noiseVar,
@@ -336,7 +336,7 @@ void icarussigproc::AdaptiveWiener::filterLeeEnhanced(
 }
 
 template <typename T>
-void icarussigproc::AdaptiveWiener::filterLeeEnhanced(
+void sigproc_tools::AdaptiveWiener::filterLeeEnhanced(
   std::vector<std::vector<T>>& deconvolvedWaveform,
   const std::vector<std::vector<T>>& waveLessCoherent,
   const float noiseVar,
@@ -403,7 +403,7 @@ void icarussigproc::AdaptiveWiener::filterLeeEnhanced(
 }
 
 
-void icarussigproc::AdaptiveWiener::adaptiveROIWiener(
+void sigproc_tools::AdaptiveWiener::adaptiveROIWiener(
   std::vector<std::vector<short>>& deconvolvedWaveform,
   const std::vector<std::vector<short>>& waveLessCoherent,
   const std::vector<std::vector<bool>>& selectVals,
@@ -418,7 +418,7 @@ void icarussigproc::AdaptiveWiener::adaptiveROIWiener(
     noiseVar, sx, sy, a, epsilon);
 }
 
-void icarussigproc::AdaptiveWiener::adaptiveROIWiener(
+void sigproc_tools::AdaptiveWiener::adaptiveROIWiener(
   std::vector<std::vector<float>>& deconvolvedWaveform,
   const std::vector<std::vector<float>>& waveLessCoherent,
   const std::vector<std::vector<bool>>& selectVals,
@@ -433,7 +433,7 @@ void icarussigproc::AdaptiveWiener::adaptiveROIWiener(
     noiseVar, sx, sy, a, epsilon);
 }
 
-void icarussigproc::AdaptiveWiener::adaptiveROIWiener(
+void sigproc_tools::AdaptiveWiener::adaptiveROIWiener(
   std::vector<std::vector<double>>& deconvolvedWaveform,
   const std::vector<std::vector<double>>& waveLessCoherent,
   const std::vector<std::vector<bool>>& selectVals,
@@ -450,7 +450,7 @@ void icarussigproc::AdaptiveWiener::adaptiveROIWiener(
 
 
 template <typename T>
-void icarussigproc::AdaptiveWiener::adaptiveROIWiener(
+void sigproc_tools::AdaptiveWiener::adaptiveROIWiener(
   std::vector<std::vector<T>>& deconvolvedWaveform,
   const std::vector<std::vector<T>>& waveLessCoherent,
   const std::vector<std::vector<bool>>& selectVals,
@@ -519,3 +519,94 @@ void icarussigproc::AdaptiveWiener::adaptiveROIWiener(
   return;
 }
 
+
+void sigproc_tools::AdaptiveWiener::sigmaFilter(
+  std::vector<std::vector<short>>& deconvolvedWaveform,
+  const std::vector<std::vector<short>>& waveLessCoherent,
+  const float noiseVar,
+  const unsigned int sx,
+  const unsigned int sy,
+  const unsigned int K,
+  const float sigmaFactor)
+{
+  sigmaFilter<short>(
+    deconvolvedWaveform, waveLessCoherent, noiseVar, sx, sy, K, sigmaFactor);
+}
+
+void sigproc_tools::AdaptiveWiener::sigmaFilter(
+  std::vector<std::vector<float>>& deconvolvedWaveform,
+  const std::vector<std::vector<float>>& waveLessCoherent,
+  const float noiseVar,
+  const unsigned int sx,
+  const unsigned int sy,
+  const unsigned int K,
+  const float sigmaFactor)
+{
+  sigmaFilter<float>(
+    deconvolvedWaveform, waveLessCoherent, noiseVar, sx, sy, K, sigmaFactor);
+}
+
+void sigproc_tools::AdaptiveWiener::sigmaFilter(
+  std::vector<std::vector<double>>& deconvolvedWaveform,
+  const std::vector<std::vector<double>>& waveLessCoherent,
+  const float noiseVar,
+  const unsigned int sx,
+  const unsigned int sy,
+  const unsigned int K,
+  const float sigmaFactor)
+{
+  sigmaFilter<double>(
+    deconvolvedWaveform, waveLessCoherent, noiseVar, sx, sy, K, sigmaFactor);
+}
+
+
+template <typename T>
+void sigproc_tools::AdaptiveWiener::sigmaFilter(
+  std::vector<std::vector<T>>& deconvolvedWaveform,
+  const std::vector<std::vector<T>>& waveLessCoherent,
+  const float noiseVar,
+  const unsigned int sx,
+  const unsigned int sy,
+  const unsigned int K,
+  const float sigmaFactor)
+{
+  size_t numChannels = waveLessCoherent.size();
+  size_t nTicks = waveLessCoherent.at(0).size();
+  int xHalfWindowSize(sx / 2);
+  int yHalfWindowSize(sy / 2);
+
+  deconvolvedWaveform.resize(numChannels);
+  for (size_t i=0; i<numChannels; ++i) {
+    deconvolvedWaveform[i].resize(nTicks);
+  }
+
+  for (size_t i=0; i<numChannels; ++i) {
+    for (size_t j=0; j<nTicks; ++j) {
+      // For each center pixel, apply a adaptive local wiener filter.
+      int lbx = i - (int) xHalfWindowSize;
+      int ubx = i + (int) xHalfWindowSize;
+      int lby = j - (int) yHalfWindowSize;
+      int uby = j + (int) yHalfWindowSize;
+      size_t lowerBoundx = std::max(lbx, 0);
+      size_t upperBoundx = std::min(ubx, (int) numChannels);
+      size_t lowerBoundy = std::max(lby, 0);
+      size_t upperBoundy = std::min(uby, (int) nTicks);
+      std::vector<T> x;
+      x.reserve(sx * sy);
+      for (size_t ix=lowerBoundx; ix<upperBoundx; ++ix) {
+        for (size_t iy=lowerBoundy; iy<upperBoundy; ++iy) {
+          if (std::abs(waveLessCoherent[ix][iy]) < sigmaFactor * noiseVar) {
+            x.push_back(waveLessCoherent[ix][iy]);
+          }
+        }
+      }
+      T localMean = std::accumulate(x.begin(), x.end(), 0.0) / x.size() ;
+      if (x.size() > K) {
+        deconvolvedWaveform[i][j] = localMean;
+      } else {
+        deconvolvedWaveform[i][j] = waveLessCoherent[i][j];
+      }
+    }
+  }
+  return;
+}
