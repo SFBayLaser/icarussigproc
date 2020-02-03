@@ -1,14 +1,14 @@
 /**
  * \file Deconvolve.h
  *
- * \ingroup icarussigproc
+ * \ingroup sigproc_tools
  *
  * \brief Class def header for a class Deconvolve
  *
  * @author koh0207
  */
 
-/** \addtogroup icarussigproc
+/** \addtogroup sigproc_tools
 
     @{*/
 #ifndef __SIGPROC_TOOLS_DECONVOLVE_H__
@@ -24,7 +24,7 @@
 #include <functional>
 #include "MiscUtils.h"
 
-namespace icarussigproc {
+namespace sigproc_tools {
 
   /**
      \class Deconvolve
@@ -175,6 +175,33 @@ namespace icarussigproc {
       );
 
 
+      void sigmaFilter(
+        std::vector<std::vector<short>>&,
+        const std::vector<std::vector<short>>&,
+        const float,
+        const unsigned int,
+        const unsigned int,
+        const unsigned int,
+        const float);
+
+      void sigmaFilter(
+        std::vector<std::vector<float>>&,
+        const std::vector<std::vector<float>>&,
+        const float,
+        const unsigned int,
+        const unsigned int,
+        const unsigned int,
+        const float);
+
+      void sigmaFilter(
+        std::vector<std::vector<double>>&,
+        const std::vector<std::vector<double>>&,
+        const float,
+        const unsigned int,
+        const unsigned int,
+        const unsigned int,
+        const float);
+
       /// Default destructor
       ~AdaptiveWiener(){}
 
@@ -223,6 +250,16 @@ namespace icarussigproc {
         const unsigned int sy=3,
         const float a=1,
         const float epsilon=2.5);
+
+      template <typename T>
+      void sigmaFilter(
+        std::vector<std::vector<T>>& deconvolvedWaveform,
+        const std::vector<std::vector<T> >& waveLessCoherent,
+        const float noiseVar,
+        const unsigned int sx=7,
+        const unsigned int sy=7,
+        const unsigned int K=5,
+        const float sigmaFactor=2.0);
   };
 }
 
