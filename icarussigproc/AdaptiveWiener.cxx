@@ -143,7 +143,7 @@ void sigproc_tools::AdaptiveWiener::MMWF(
     deconvolvedWaveform[i].resize(nTicks);
   }
 
-  sigproc_tools::MiscUtils utils;
+  icarussigproc::MiscUtils utils;
 
   for (size_t i=0; i<numChannels; ++i) {
     for (size_t j=0; j<nTicks; ++j) {
@@ -229,7 +229,7 @@ void sigproc_tools::AdaptiveWiener::MMWFStar(
     deconvolvedWaveform[i].resize(nTicks);
   }
 
-  sigproc_tools::MiscUtils utils;
+  icarussigproc::MiscUtils utils;
 
   std::vector<std::vector<T>> localMedians;
   std::vector<std::vector<T>> localVars;
