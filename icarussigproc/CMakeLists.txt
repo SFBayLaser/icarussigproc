@@ -1,5 +1,8 @@
+add_definitions(-DEIGEN_FFTW_DEFAULT)
+
 art_make( 
           LIB_LIBRARIES 
+                          ${ICARUS_FFTW_LIBRARIES}
                           ${ROOT_GEOM}
                           ${ROOT_XMLIO}
                           ${ROOT_GDML}
