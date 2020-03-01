@@ -18,7 +18,7 @@
 
 #include <numeric>
 #include <cmath>
-#include <complex.h>
+#include <complex>
 
 #include <functional>
 #include <fstream>
